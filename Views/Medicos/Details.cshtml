@@ -1,0 +1,13 @@
+
+@model ClinicaVida.Web.Models.Medico
+
+<h1>Detalhes do Médico</h1>
+
+<p><strong>Nome:</strong> @Model.Nome</p>
+<p><strong>CRM:</strong> @Model.Crm</p>
+<p><strong>Especialidade:</strong> @Model.Especialidade?.Nome</p>
+<p><strong>Descrição:</strong> @Model.Especialidade?.Descricao</p>
+
+<a asp-controller="Medicos" asp-action="Index">
+    Voltar para a lista
+</a>

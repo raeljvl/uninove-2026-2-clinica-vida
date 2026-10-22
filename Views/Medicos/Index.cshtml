@@ -1,0 +1,53 @@
+@using ClinicaVida.Web.Models
+
+
+@model IEnumerable<ClinicaVida.Web.Models.Medico>
+
+<h1>Médicos</h1>
+
+<form method="get">
+    <label for="especialidadeId">Especialidade:</label>
+
+    <select id="especialidadeId" name="especialidadeId">
+        <option value="">Todas</option>
+
+        @foreach (var especialidade in
+            ClinicaEmMemoria.Especialidades)
+        {
+            <option value="@especialidade.Id">
+                @especialidade.Nome
+            </option>
+        }
+    </select>
+
+    <button type="submit">Filtrar</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CRM</th>
+            <th>Especialidade</th>
+            <th>Detalhes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var medico in Model)
+        {
+            <tr>
+                <td>@medico.Nome</td>
+                <td>@medico.Crm</td>
+                <td>@medico.Especialidade?.Nome</td>
+                <td>
+                    <a asp-controller="Medicos"
+                       asp-action="Details"
+                       asp-route-id="@medico.Id">
+                        Ver detalhes
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
