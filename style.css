@@ -64,3 +64,88 @@ footer {
   padding: 24px 32px;
   margin-top: 40px;
 }
+
+/* ==========================================================================
+   ESTILOS DO FORMULÁRIO DE AGENDAMENTO (Adicione isso no final do seu style.css)
+   ========================================================================== */
+
+.form-agendamento {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+fieldset {
+  border: 1px solid var(--vida-borda);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+legend {
+  font-weight: 600;
+  color: var(--vida-primaria);
+  padding: 0 10px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--vida-texto);
+}
+
+/* Garante que todos os campos tenham área de clique grande e visível */
+.campo input, 
+.campo select, 
+.campo textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--vida-borda);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: var(--vida-texto);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Efeito visual quando o usuário clica no campo */
+.campo input:focus, 
+.campo select:focus, 
+.campo textarea:focus {
+  border-color: var(--vida-secundaria);
+  box-shadow: 0 0 0 3px rgba(46, 158, 126, 0.1);
+}
+
+/* Botão de Agendamento */
+.form-agendamento button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--vida-secundaria);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-agendamento button[type="submit"]:hover {
+  background-color: var(--vida-primaria);
+}
